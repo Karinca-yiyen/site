@@ -6,22 +6,27 @@
   <title>Kerem Bollu</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
       font-family: 'Roboto', sans-serif;
       height: 100vh;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      flex-direction: column;
     }
 
     .container {
       text-align: center;
       animation: fadeIn 2s ease-in-out;
+      margin-top: -60px; /* sayfada biraz yukarıda kalması için */
     }
 
     h1 {
@@ -36,7 +41,7 @@
     p {
       font-size: 20px;
       color: #c2e9fb;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
     .hover-box {
@@ -52,6 +57,7 @@
       position: relative;
       transition: all 0.3s ease;
       cursor: pointer;
+      margin-top: 40px; /* kutuyu biraz aşağı çeker */
     }
 
     .hover-box::after {
