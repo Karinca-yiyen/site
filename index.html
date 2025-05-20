@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kerem Bollu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      font-family: 'Roboto', sans-serif;
+      padding: 0;
       height: 100vh;
-      overflow: hidden;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Roboto', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
     }
-
-    .container {
+    .left-side {
+      flex: 1;
+      max-width: 500px;
+      padding: 20px;
       text-align: center;
       animation: fadeIn 2s ease-in-out;
-      transform: translateY(40px); /* biraz aşağıya çeker */
     }
-
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 60px;
@@ -36,16 +35,15 @@
       text-shadow: 0 0 15px #00ffe5;
       margin-bottom: 20px;
     }
-
     p {
       font-size: 20px;
       color: #c2e9fb;
       margin-bottom: 40px;
     }
-
     .hover-box {
       width: 200px;
       height: 100px;
+      margin: 0 auto;
       border: 2px solid #00ffe5;
       border-radius: 15px;
       display: flex;
@@ -54,39 +52,67 @@
       color: #00ffe5;
       font-size: 24px;
       position: relative;
-      transition: all 0.3s ease;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
-
     .hover-box::after {
-      content: "ÇETKO";
+      content: "BOM";
       position: absolute;
       color: #ff4e50;
       font-size: 26px;
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-
     .hover-box:hover::after {
       opacity: 1;
     }
-
     .hover-box:hover {
       background-color: rgba(255, 255, 255, 0.1);
       transform: scale(1.05);
     }
-
+    .right-side {
+      flex: 1;
+      max-width: 500px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .right-side img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ffe5;
+      user-select: none;
+      pointer-events: none;
+    }
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .left-side, .right-side {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+      .right-side img {
+        border-radius: 15px;
+        box-shadow: 0 0 15px #00ffe5;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="left-side">
     <h1>KEREM BOLLU</h1>
     <p>patlıcan</p>
-    <div class="hover-box"></div>
+    <div class="hover-box">Üzerine Gel</div>
+  </div>
+  <div class="right-side">
+    <img src="https://cdn.pixabay.com/photo/2014/04/03/11/39/ant-311727_1280.jpg" alt="Karınca Fotoğrafı" />
   </div>
 </body>
 </html>
