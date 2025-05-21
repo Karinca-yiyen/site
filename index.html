@@ -50,17 +50,17 @@
       position: relative;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-align: center;
     }
     .box:hover {
       background-color: #111;
       transform: scale(1.05);
     }
-    .box .links {
+    .links {
       position: absolute;
       bottom: 10px;
       opacity: 0;
       transition: opacity 0.3s ease;
-      text-align: center;
     }
     .box:hover .links {
       opacity: 1;
@@ -76,6 +76,16 @@
       color: white;
       text-decoration: underline;
     }
+    .click-display {
+      position: absolute;
+      font-size: 18px;
+      color: #00ffcc;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .show {
+      opacity: 1 !important;
+    }
     @media (max-width: 800px) {
       .box-container {
         flex-direction: column;
@@ -87,18 +97,24 @@
 <body>
   <h1>KEREM BOLLU</h1>
   <div class="box-container">
+    <!-- Sol kutu -->
     <div class="box">
       <div class="links">
         <a href="https://github.com/Karinca-yiyen">Github</a>
         <a href="https://www.linkedin.com/in/kerem-bollu-72a767328">Linkedin</a>
       </div>
     </div>
-    <div class="box">
+
+    <!-- Orta kutu -->
+    <div class="box" id="middle-box">
+      <div class="click-display" id="click-result"></div>
       <div class="links">
-        <a href="kerembollu19@gmail.com">Mail</a>
-        <a href="HTB-240CB94473">HTB Student ID</a>
+        <a href="#" onclick="showClickMessage('Mail')">Mail</a>
+        <a href="#" onclick="showClickMessage('HTB Student ID')">HTB Student ID</a>
       </div>
     </div>
+
+    <!-- Sağ kutu -->
     <div class="box">
       <div class="links">
         <a href="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3025406">Tryhackme</a>
@@ -106,5 +122,19 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function showClickMessage(text) {
+      const result = document.getElementById('click-result');
+      result.textContent = text;
+      result.classList.add('show');
+
+      // 5 saniye sonra gizle
+      setTimeout(() => {
+        result.classList.remove('show');
+        result.textContent = '';
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
